@@ -8,7 +8,19 @@
     <title>Payet</title>
 </head>
 <body>
-    <!-- Barre de Navigation -->
+
+    <!-- Barre de Navigation AFFICHER SEULEMENT QUAND L'ECRANT EST PETIT-->
+
+    <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Accueil</a>
+    <a href="#">Présentation</a>
+    <a href="#">Projets</a>
+    <a href="#">Contact</a>
+  </div>
+
+
+  <!-- Barre de Navigation AFFICHER SEULEMENT QUAND L'ECRANT EST GRAND-->
     <nav>
         <ul>
             <li><a href="#" class="nav item">Accueil</a></li>
@@ -18,7 +30,10 @@
         </ul>
     </nav>
 
+
+
 <div id="accueil" class="hero">
+
     <div class="accueil-left">
         <h1 id="titre">Payet Jonathan</h1>
         <p>Développeur Web Junior !</p>
@@ -27,9 +42,23 @@
             <a href="" class="btn-accueil b2">Projets</a>
         </div>
     </div>
-    <div class="accueil-right"></div>
+    <div class="accueil-right">
+        <span onclick="openNav()">&#9776;</span>
+    </div>
 </div>
 
     <script src="app.js"></script>
+
+
+<script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+
 </body>
 </html>
