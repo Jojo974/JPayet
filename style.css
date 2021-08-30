@@ -134,7 +134,7 @@ nav a {
     .hero {
         height: 800px;
     }
-    h1 {
+    titre {
         font-size: 40px;
     }
     .hero p {
@@ -155,7 +155,7 @@ nav a {
 .hero {
     height: 700px;
 }
-h1 {
+titre {
     font-size: 30px;
     padding-top: 100px;
     margin-left: 2vw;
