@@ -22,7 +22,7 @@ $(document).ready(function(){
 // Typing animation
 
 var typed = new Typed(".typing", {
-    strings: ["Developpeur", "Web-Designer", "Etudiant"],
+    strings: ["Développeur", "Web-Designer", "Étudiant"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
@@ -35,8 +35,7 @@ $('.scroll-up-btn').click(function(){
 });
 
 
-// owl carousel script 
-
+// Owl carousel script 
 $('.carousel').owlCarousel({
     margin: 20,
     loop: true,
@@ -57,3 +56,68 @@ $('.carousel').owlCarousel({
         }
     }
 })
+
+// PopUp
+
+var btnPopup = document.getElementById('btn-popup-projets');
+var overlay = document.getElementById('overlay');
+var btnClose = document.getElementById('btnClose');
+
+btnPopup.addEventListener('click',openModal);
+
+btnClose.addEventListener('click',closePopup);
+
+function openModal(){
+    overlay.style.display = 'block';
+}
+
+function closePopup(){
+    overlay.style.display = 'none';
+}
+
+ScrollReveal().reveal('.text-1', { delay: 4000 });
+ScrollReveal().reveal('.text-2', { delay: 5000 });
+ScrollReveal().reveal('.text-3', { delay: 6000 });
+ScrollReveal().reveal('.text-3', { delay: 6000 });
+
+
+ScrollReveal().reveal('.a-propos');
+ScrollReveal().reveal('.a-propos-content');
+ScrollReveal().reveal('.column .right');
+
+
+
+// Page d'accueil
+
+
+window.addEventListener('load', loader);
+
+function loader(){
+
+    const TLLOAD = gsap.timeline();
+
+    TLLOAD
+    .to('.images-container', {height: 400, duration: 1.3, delay: 0.4, ease: 'power2.out'})
+    .to('.bloc-txt', {height: 'auto', duration: 0.6, ease: 'power2.out'}, '-=0.8')
+    .to('.bloc-txt h2', {y: 0, ease: 'power2.out'}, '-=0.6')
+
+    .to('.f2', {y: 0, duration: 0.6, ease: 'power2.out'})
+    .add(() => {
+        document.querySelector('.flip-img1').style.backgroundImage = "url('img/Bienvenue\ \(2\).png')";
+    })
+    .to('.f2', {y: '-100%'})
+
+    .to('.load-container', {opacity: 0, duration: 0.8, delay: 0.7})
+    .add(() => {
+        document.querySelector('.load-container').style.display = "none";
+    })
+
+    // .to('.navbar')
+    // .add(() => {
+    //     document.querySelector('.navbar').style.opacity = "1";
+    // })
+    // .add(() => {
+    //     document.querySelector('.nav').play()
+    // }, '-=0.8')
+
+}
