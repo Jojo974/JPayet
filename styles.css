@@ -10,6 +10,83 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
+
+.load-container {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: #2e9da7;
+    pointer-events: none;
+}
+
+.anim-bloc {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    z-index: 100;
+
+}
+ .bloc-txt {
+    background: white;
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    height: 0;
+    z-index: 175;
+    overflow: hidden;
+}
+
+.bloc-txt h2 {
+    padding: 10px 30px;
+    color: #222;
+    font-family: Playfair Display, serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    transform: translateY(100px);
+}
+
+.images-container {
+    width: 100%;
+    height: 0px;
+    position: absolute;
+    /* Pour faire monter la height de bas en haut */
+    bottom: 0px;
+    z-index: 150;
+    overflow: hidden;
+}
+
+.img-flip{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    position: absolute;
+}
+
+.flip-img1 {
+    background-image: url(img/Bienvenue.png);
+}
+
+.flip {
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    position: absolute;
+}
+
+.f2 {
+    background: #114657;
+}
+
+
+
 /* navbar style */
 
 .navbar {
@@ -114,7 +191,10 @@ transition: all 0.3s ease;
 
 
 
+
 /* Home section styling */
+
+
 
 .home {
     display: flex;
@@ -146,7 +226,7 @@ transition: all 0.3s ease;
 }
 
 .home .home-content .text-3 span{
-    color: #33658A;
+    color: #55DDE0;
     font-weight: 500;
     
 } 
@@ -186,13 +266,13 @@ section {
     padding: 100px 0;
 }
 
-.about, .services, .skills, .teams, .contact, footer {
+.a-propos, .projets, .competences, .teams, .contact, footer {
     font-family: 'Poppins', sans-serif;
 }
 
-.about .about-content,
-.services .serv-content,
-.skills .skills-content,
+.a-propos .a-propos-content,
+.projets .serv-content,
+.competences .competences-content,
 .contact .contact-content {
     display: flex;
     align-items: center;
@@ -229,51 +309,76 @@ section .title::after {
     color: #33658A;
     padding: 5px;
     background: #fff;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    border-radius: 50px;
 }
 
 
 
 
 
-/* Section about styling */
+/* Section a-propos styling */
 
-.about .title::after {
-    content:'Who I am';
+section.a-propos {
+    background: url(img/bg-apropos1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    padding-bottom: 100px;
+    background-attachment: fixed;
 }
 
-.about .about-content .left {
+section.a-propos svg{
+    width: 100%;
+    filter: drop-shadow(0 0 0.75rem #33658A);
+} 
+
+/* .img-topapropos {
+    background: #334562;
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+} */
+
+.a-propos .title::after {
+    content:'Qui suis-je ?';
+}
+
+.a-propos .a-propos-content .left {
     width: 45%;
 }
 
-.about .about-content .left img{
+.a-propos .a-propos-content .left img{
     height: 400px;
     width: 400px;
     object-fit: cover;
     border-radius: 6px;
+    filter: drop-shadow(0 0 1rem #33658A);
 }
 
-.about .about-content .right {
+.a-propos .a-propos-content .right {
     width: 55%;
 }
 
 
-.about .about-content .right .text{
+.a-propos .a-propos-content .right .text{
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.about .about-content .right span{
+.a-propos .a-propos-content .right span{
     color: #33658A;
 }
 
 
-.about .about-content .right p{
+.a-propos .a-propos-content .right p{
     text-align: justify;
 }
 
-.about .about-content .right a{
+.a-propos .a-propos-content .right a{
     display: inline-block;
     background: #33658A;
     color: #fff;
@@ -286,38 +391,65 @@ section .title::after {
     transition: all 0.3s ease;
 }
 
-.about .about-content .right a:hover{
+.a-propos .a-propos-content .right a:hover{
     color: #33658A;
     background: none;
 }
 
+.a-propos .a-propos-content .right .bull-info a span{
+    position:absolute; 
+    margin-top:23px;
+    margin-left:10px;
+    color:#28C2FF;
+    background:rgba(0,0,0,.9);
+    padding:15px;
+    border-radius:6px;
+    box-shadow:0 0 2px rgba(0,0,0,.5);
+    transform:scale(0) rotate(-12deg);
+    transition:all .25s;
+    opacity:0;
+    font-size: 15px;
+}
+
+.a-propos .a-propos-content .right .bull-info a:hover span, a:focus span{
+    transform:scale(1) rotate(0);    
+    opacity:1;    
+}
+
+
+
+/* .a-propos .a-propos-content .right .bull-info a:hover, a:focus{
+    background:rgba(0,0,0,.4);
+    box-shadow:0 1px 0 rgba(255,255,255,.4);
+} */
 
 
 
 
 
-/* Services serction styling */
 
-.services, .teams {
+/* projets serction styling */
+
+.projets, .teams {
     color: #fff;
     background: #111;
 }
 
 
-.services .title::before,
+.projets .title::before,
 .teams .title::before {
     background: #fff;
 
 }
 
-.services .title::after,
+.projets .title::after,
 .teams .title::after {
-    content: "What i provide";
+    content: "Que fais-je ?";
     background: #111;
 
 }
 
-.services .serv-content .card {
+.projets .serv-content .card {
     width: calc(33% - 20px);
     background: #222;
     text-align: center;
@@ -325,63 +457,134 @@ section .title::after {
     padding: 20px 25px;
     cursor: pointer;
     transition: all 0.3s ease;
+    height: 550px;;
+    filter: drop-shadow(0 0 0.75rem #33658A);
 
 }
 
-.services .serv-content .card:hover {
+.projets .serv-content .card:hover {
     background: #33658A;
 }
+.projets .serv-content .card:hover .btn-popup-projets {
+    background: #60abe0;
+}
 
-.services .serv-content .card .box{
+.projets .serv-content .card .box{
     transition: all 0.3s ease;
 }
 
-.services .serv-content .card:hover .box{
+.projets .serv-content .card:hover .box{
     transform: scale(1.05);
 }
 
-.services .serv-content .card i{
+.projets .serv-content .card i{
     font-size: 50px;
     color: #33658A;
     transition: color 0.3s ease;
+    margin-bottom: 10px;
     
 }
 
-.services .serv-content .card:hover i{
+.projets .serv-content .card:hover i{
     color: #fff;
 }
 
-.services .serv-content .text {
+.projets .serv-content .text {
     font-size: 25px;
     font-weight: 500px;
 }
 
-
-
-
-
-
-/* Skills section styling */
-
-.skills .title::after {
-    content: "What i know";
+.projets .serv-content  .btn-popup-projets {
+    display: inline-block;
+    background: #33658A;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 6px;
+    border: 2px solid #000000;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.skills .skills-content .column {
+.projets .serv-content  .btn-popup-projets:hover {
+    display: inline-block;
+    background: #fff;
+    color: #33658A;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 6px;
+    border: 2px solid #000000;
+    transition: all 0.3s ease;
+}
+
+.projets .serv-content .overlay {
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    left: 0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 999;
+}
+
+.projets .serv-content .overlay .popup {
+    margin: 8% 15%;
+    width: 70%;
+    height: 500px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 15px 20px 0 rgba(0,0,0,.5);
+    padding: 1em;
+    color:royalblue;
+}
+
+.projets .serv-content .overlay .btnClose i{
+    float: right;
+    cursor: pointer;
+    color: red;
+    font-size: 40px;
+    padding: 5px 20px;
+}
+
+
+
+
+
+
+/* competences section styling */
+
+section.competences {
+    background: url(img/bg-apropos1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    padding-bottom: 100px;
+    background-attachment: fixed;
+}
+
+.competences .title::after {
+    content: "Suis-je doué ?";
+}
+
+.competences .competences-content .column {
     width: calc(50% - 30px);
 }
 
-.skills .skills-content .left .text {
+.competences .competences-content .left .text {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.skills .skills-content .left p {
+.competences .competences-content .left p {
     text-align: justify;
 }
 
-.skills .skills-content .left a {
+.competences .competences-content .left a {
     display: inline-block;
     background: #33658A;
     color: #fff;
@@ -394,16 +597,16 @@ section .title::after {
     transition: all 0.3s ease;
 }
 
-.skills .skills-content .left a:hover{
+.competences .competences-content .left a:hover{
     color: #33658A;
     background: none;
 }
 
-.skills .skills-content .right .bars {
+.competences .competences-content .right .bars {
     margin-bottom: 15px;
 }
 
-.skills .skills-content .right .info {
+.competences .competences-content .right .info {
     display: flex;
     margin-bottom: 5px;
     align-items: center;
@@ -411,19 +614,19 @@ section .title::after {
 }
 
 
-.skills .skills-content .right span {
+.competences .competences-content .right span {
     font-weight: 500;
     font-size: 18px;
 }
 
-.skills .skills-content .right .line {
+.competences .competences-content .right .line {
     height: 5px;
     width: 100%;
     background: lightgrey;
     position: relative;
 }
 
-.skills .skills-content .right .line::before {
+.competences .competences-content .right .line::before {
     content: "";
     position: absolute;
     height: 100%;
@@ -432,19 +635,19 @@ section .title::after {
     background: #33658A;
 }
 
-.skills-content .right .html::before {
+.competences-content .right .html::before {
     width: 90%;
 }
-.skills-content .right .css::before {
+.competences-content .right .css::before {
     width: 60%;
 }
-.skills-content .right .js::before {
+.competences-content .right .js::before {
     width: 80%;
 }
-.skills-content .right .php::before {
+.competences-content .right .php::before {
     width: 50%;
 }
-.skills-content .right .mysql::before {
+.competences-content .right .mysql::before {
     width: 70%;
 }
 
@@ -539,6 +742,16 @@ background: #33658A!important;
 
 
 /* Contact section styling */
+
+section.contact {
+    background: url(img/bg-apropos1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    padding-bottom: 100px;
+}
+
 
 .contact .title::after {
     content: "Get in touch"
@@ -689,14 +902,25 @@ footer span a:hover {
     .home .max-width {
         margin-left: 0px;
         }
+        .projets .serv-content .card {
+            height: 700px;
+            }
     }
 
     @media (max-width: 1104px) {
-        .about .about-content .left img{
+        .a-propos .a-propos-content .left img{
             height: 350px;
             width: 350px;
-
         }
+
+        .wave {
+            height: 100px;
+            width: 100%;
+        }
+        .projets .serv-content .card {
+            height: 700px;
+            }
+
     }
     
 
@@ -704,6 +928,9 @@ footer span a:hover {
     .max-width {
         padding: 0 50px;
         }
+        .projets .serv-content .card {
+            height: 700px;
+            }
     }
 
 @media (max-width: 947px) {
@@ -754,29 +981,31 @@ footer span a:hover {
     .max-width {
         max-width: 800px;
     }
-    .about .about-content .column {
+    .a-propos .a-propos-content .column {
         width: 50%;
     }
-    .about .about-content .left {
+    .a-propos .a-propos-content .left {
     display: flex;
         justify-content: center;
         margin: 0 auto 60px;
     }
-    .about .about-content .right {
+    .a-propos .a-propos-content .right {
         flex: 100%;
         }
 
-    .services .serv-content .card {
+    .projets .serv-content .card {
         width: calc(50% - 10px);
         margin-bottom: 20px;
+        height: 600px;
         }
-        .skills .skills-content .column,
+        .competences .competences-content .column,
         .contact .contact-content .column
          {
             width: 100%;
             margin-bottom: 35px;
 
         }
+        
     }
 
 @media (max-width: 690px) {
@@ -793,10 +1022,18 @@ footer span a:hover {
     .home .home-content a {
         font-size: 20px;
     }
-    .services .serv-content .card {
+    .projets .serv-content .card {
         width: 100%;
         }
 }
+
+@media (max-width: 750px) {
+
+        .projets .serv-content .card {
+
+            height: 650px;
+            }
+    }
 
 @media (max-width: 500px) {
         .home .home-content .text-2{
@@ -810,4 +1047,12 @@ footer span a:hover {
             font-size: 20px;
             padding: 8px 30px;
         }
+
+        .projets .serv-content .box p{
+
+            font-size: 15px;
+            font-weight: 100;
+            
+        }
+
     }
