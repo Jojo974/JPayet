@@ -171,4 +171,21 @@ function ajax(method, url, data, success, error) {
     }
   };
   xhr.send(data);
-}
+};
+
+
+var someTrigger = $('#trigger'); //a trigger button
+var contentContainer = $('#content'); //element I want to temporarily remove scroll from
+
+contentContainer.addClass('notfixed'); //make sure that the element has the "notfixed" class
+
+//Something to trigger the fixed positioning. In this case we chose a button.
+someTrigger.on('click', function(){
+
+    if(contentContainer.hasClass('notfixed')){
+        contentContainer.removeClass('notfixed').addClass('fixed');
+
+    }else if(contentContainer.hasClass('fixed')){
+        contentContainer.removeClass('fixed').addClass('notfixed');
+    };
+});
