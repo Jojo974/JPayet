@@ -87,6 +87,7 @@ ScrollReveal().reveal('.column .right');
 ScrollReveal().reveal('.card1');
 ScrollReveal().reveal('.card2', { delay: 1000 });
 ScrollReveal().reveal('.card3', { delay: 2000 });
+ScrollReveal().reveal('.card4', { delay: 3000 });
 
 
 
