@@ -78,12 +78,15 @@ function closePopup(){
 ScrollReveal().reveal('.text-1', { delay: 4000 });
 ScrollReveal().reveal('.text-2', { delay: 5000 });
 ScrollReveal().reveal('.text-3', { delay: 6000 });
-ScrollReveal().reveal('.text-3', { delay: 6000 });
 
 
 ScrollReveal().reveal('.a-propos');
 ScrollReveal().reveal('.a-propos-content');
 ScrollReveal().reveal('.column .right');
+
+ScrollReveal().reveal('.card1');
+ScrollReveal().reveal('.card2', { delay: 1000 });
+ScrollReveal().reveal('.card3', { delay: 2000 });
 
 
 
