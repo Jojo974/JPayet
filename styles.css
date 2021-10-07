@@ -962,8 +962,8 @@ section.contact .icons-social p {
     margin: 10px auto;
     border-radius: 8px;
   }
-  #status.success {
-    background-color: rgb(211, 250, 153);
+ #status.success {
+    background-color: rgb(86, 143, 0);
     animation: status 4s ease forwards;
   }
   #status.error {
