@@ -75,6 +75,7 @@ function closePopup(){
     overlay.style.display = 'none';
 }
 
+
 ScrollReveal().reveal('.text-1', { delay: 4000 });
 ScrollReveal().reveal('.text-2', { delay: 5000 });
 ScrollReveal().reveal('.text-3', { delay: 6000 });
@@ -84,11 +85,11 @@ ScrollReveal().reveal('.a-propos');
 ScrollReveal().reveal('.a-propos-content');
 ScrollReveal().reveal('.column .right');
 
+
 ScrollReveal().reveal('.card1');
 ScrollReveal().reveal('.card2', { delay: 1000 });
 ScrollReveal().reveal('.card3', { delay: 2000 });
 ScrollReveal().reveal('.card4', { delay: 3000 });
-
 
 
 // Page d'accueil
@@ -131,34 +132,34 @@ function loader(){
 // Contact Form
 
 
-window.addEventListener("DOMContentLoaded", function () {
-  // get the form elements defined in your form HTML above
+// window.addEventListener("DOMContentLoaded", function () {
+//   // get the form elements defined in your form HTML above
 
-  var form = document.getElementById("my-form");
-  // var button = document.getElementById("my-form-button");
-  var status = document.getElementById("status");
+//   var form = document.getElementById("my-form");
+//   // var button = document.getElementById("my-form-button");
+//   var status = document.getElementById("status");
 
-  // Success and Error functions for after the form is submitted
+//   // Success and Error functions for after the form is submitted
 
-  function success() {
-    form.reset();
-    status.classList.add("success");
-    status.innerHTML = "Votre message a bien été envoyé !";
-  }
+//   function success() {
+//     form.reset();
+//     status.classList.add("success");
+//     status.innerHTML = "Votre message a bien été envoyé !";
+//   }
 
-  function error() {
-    status.classList.add("error");
-    status.innerHTML = "Oops! Un problème est survenu.";
-  }
+//   function error() {
+//     status.classList.add("error");
+//     status.innerHTML = "Oops! Un problème est survenu.";
+//   }
 
-  // handle the form submission event
+//   // handle the form submission event
 
-  form.addEventListener("submit", function (ev) {
-    ev.preventDefault();
-    var data = new FormData(form);
-    ajax(form.method, form.action, data, success, error);
-  });
-});
+//   form.addEventListener("submit", function (ev) {
+//     ev.preventDefault();
+//     var data = new FormData(form);
+//     ajax(form.method, form.action, data, success, error);
+//   });
+// });
 
 // helper function for sending an AJAX request
 

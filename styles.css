@@ -667,18 +667,23 @@ section.competences {
     width: 80%;
 }
 .competences-content .right .css::before {
-    width: 70%;
-}
-.competences-content .right .js::before {
-    width: 50%;
-}
-.competences-content .right .php::before {
-    width: 50%;
-}
-.competences-content .right .mysql::before {
     width: 60%;
 }
-
+.competences-content .right .js::before {
+    width: 70%;
+}
+.competences-content .right .php::before {
+    width: 80%;
+}
+.competences-content .right .mysql::before {
+    width: 80%;
+}
+.competences-content .right .wordpress::before {
+    width: 70%;
+}
+.competences-content .right .reactnative::before {
+    width: 30%;
+}
 
 
 
@@ -962,7 +967,7 @@ section.contact .icons-social p {
     margin: 10px auto;
     border-radius: 8px;
   }
- #status.success {
+  #status.success {
     background-color: rgb(86, 143, 0);
     animation: status 4s ease forwards;
   }
